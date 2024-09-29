@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         primary: '#FF6B17',   // Primary color set to orange
         secondary: 'black',  // Secondary color set to black
+        lightGray:"#f1f5f9",
+        gray:"gray",
+        tertiary:"black"
       },
       spacing: {
         'custom-padding': '2rem',   // Custom padding value (32px)

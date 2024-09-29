@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "../Layout/Layout";
-import Home from "../Pages/Home/Home";
-import CategoryProducts from "../Pages/CategoryProducts/CategoryProducts";
+import Home from "../Pages/User/Home/Home";
+import CategoryProducts from "../Pages/User/CategoryProducts/CategoryProducts";
 
 const Routers = () => {
   return (
