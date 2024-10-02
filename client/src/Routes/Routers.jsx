@@ -9,8 +9,8 @@ const Routers = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/category/products" element={<CategoryProducts />} />
+        {/* <Route path="/home" element={<Home />} /> */}
+        <Route path={`/category/:name/products`} element={<CategoryProducts />} />
       </Route>
     </Routes>
   );

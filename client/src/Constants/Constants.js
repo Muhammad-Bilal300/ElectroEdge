@@ -35,8 +35,18 @@ export const categories = [
     icon: "",
   },
   {
-    name:"LCD",
-    value:"LCD",
-    icon:""
-},
+    name: "LCD",
+    value: "LCD",
+    icon: ""
+  },
 ];
+
+
+export const brands = [
+  { label: "Hp", value: "HP" },
+  { label: "Dell", value: "DELL" },
+  { label: "IBM", value: "IBM" },
+  { label: "Apple", value: "APPLE" },
+  { label: "Asus", value: "ASUS" }, ,
+  { label: "Acer", value: "ACER" },
+]
