@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const BestDeals = () => {
   return (
-    <div>BestDeals</div>
-  )
-}
+    <div className="w-[80%] mx-auto py-14">
+      <h3 className="font-bold text-2xl">Best Deals</h3>
+    </div>
+  );
+};
 
-export default BestDeals
+export default BestDeals;

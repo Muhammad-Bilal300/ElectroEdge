@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const PopularSearch = () => {
   return (
-    <div>PopularSearch</div>
-  )
-}
+    <div className="w-[80%] mx-auto py-14">
+      <h3 className="font-bold text-2xl"> Popular Search</h3>
+    </div>
+  );
+};
 
-export default PopularSearch
+export default PopularSearch;

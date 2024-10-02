@@ -1,16 +1,20 @@
 import React from "react";
 import Hero from "./components/Hero/Hero";
+import BestDeals from "./components/BestDeals/BestDeals";
+import FlashSale from "./components/FlashSale/FlashSale";
+import PopularSearch from "./components/PopularSearch/PopularSearch";
+import RecentlyViewed from "./components/RecentlyViewed/RecentlyViewed";
+import WeeklyPopularProducts from "./components/WeekyPopularProducts/WeeklyPopularProducts";
 
 const Home = () => {
   return (
-    <div
-      className="overflow-x-hidden w-[100%]"
-      style={{ scrollbarWidth: "none" }}
-    >
+    <div className="w-[100%]" style={{ scrollbarWidth: "none" }}>
       <Hero />
-      <div className="py-5">
-<h3></h3>
-      </div>
+      <BestDeals />
+      <FlashSale />
+      <PopularSearch />
+      <RecentlyViewed />
+      <WeeklyPopularProducts />
     </div>
   );
 };

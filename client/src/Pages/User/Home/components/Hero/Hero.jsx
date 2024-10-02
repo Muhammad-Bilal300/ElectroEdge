@@ -68,7 +68,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-[80%] mx-auto  rounded-md">
+    <div className="relative w-[80%] mx-auto rounded-md">
       {/* Adjust container width */}
       <Slider {...settings}>
         {images.map((image, index) => (
