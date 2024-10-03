@@ -1,21 +1,14 @@
 import React from 'react'
-import { brands } from '../../../../../Constants/Constants'
+import Brands from './components/brands/Brands'
+import PriceRange from './components/priceRange/PriceRange'
+import Trends from './components/trends/Trends'
 
 const Filters = () => {
     return (
-        <div className='w-[22%] shadow-md shadow-black rounded-md h-[75vh] p-4'>
-            <h3 className='text-lg font-bold'>Brands</h3>
-            <div className='py-1'>
-                {
-                    brands.map((brand, index) => {
-                        return (
-                            <div key={index} className='text-md'>
-                                {brand.label}
-                            </div>
-                        )
-                    })
-                }
-            </div>
+        <div className='w-[20%] shadow-md shadow-black max-h-[90vh] rounded-md p-4 flex flex-col space-y-2 overflow-auto'>
+            <PriceRange />
+            <Brands />
+            <Trends />
         </div>
     )
 }

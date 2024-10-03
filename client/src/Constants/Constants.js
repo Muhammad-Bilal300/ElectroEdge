@@ -20,7 +20,7 @@ export const categories = [
     icon: "",
   },
   {
-    name: "Hard Drive",
+    name: "Hard-Drive",
     value: "HARD_DRIVE",
     icon: "",
   },
@@ -49,4 +49,28 @@ export const brands = [
   { label: "Apple", value: "APPLE" },
   { label: "Asus", value: "ASUS" }, ,
   { label: "Acer", value: "ACER" },
+]
+
+
+export const prices = [
+  { from: "0", to: "25" },
+  { from: "25", to: "50" },
+  { from: "50", to: "75" },
+  { from: "75", to: "100" },
+]
+
+
+export const trends = [
+  { label: "Popular Products", to: "POPULAR PRODUCTS" },
+  { label: "Best Deals", to: "BEST DEALS" },
+  { label: "Flash Deals", to: "FLASH DEALS" },
+  { label: "Weeky Popular", to: "WEEKY POPULAR" },
+]
+
+
+export const sortCategories = [
+  { label: "Low To High", to: "LOW TO HIGHF" },
+  { label: "High To Low", to: "HIGH TO LOW" },
+  { label: "Newest", to: "NEWEST" },
+  { label: "Oldest", to: "OLDEST" },
 ]

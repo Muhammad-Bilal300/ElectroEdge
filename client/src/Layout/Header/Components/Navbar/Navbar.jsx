@@ -6,7 +6,7 @@ import RightHeader from "./Components/RightHeader/RightHeader";
 
 const Navbar = () => {
   return (
-    <Container className="w-[100%] shadow-lightgray shadow-md">
+    <Container className="w-[100%] shadow-primary shadow-md mb-2">
       <Container className="w-[80%] mx-auto py-4 flex justify-between text-center">
         <Logo />
         <SearchBar />

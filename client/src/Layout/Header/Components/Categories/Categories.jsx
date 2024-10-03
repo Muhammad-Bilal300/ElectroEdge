@@ -13,8 +13,8 @@ const Categories = () => {
           <div
             key={index}
             className={` py-2 px-4 rounded-md cursor-pointer border-2 ${selectedCategory === category.name
-                ? " border-primary text-white bg-primary shadow-sm shadow-black"
-                : "border-lightGray text-black bg-lightGray"
+              ? " border-primary text-white bg-primary shadow-sm shadow-black"
+              : "border-lightGray text-black bg-lightGray"
               }`}
             onClick={() => {
               setSelectedCategory(category.name);

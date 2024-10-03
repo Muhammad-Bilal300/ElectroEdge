@@ -21,8 +21,8 @@ const RightHeader = () => {
           }
         `}
       </style>
-      <div className="flex justify-between w-[22%] items-center">
-      <MdFavorite
+      <div className="flex justify-end w-[22%] items-center">
+        {/* <MdFavorite
           className="text-primary font-bold rotate-y-180 cursor-pointer"
           size={20}
         />
@@ -33,10 +33,17 @@ const RightHeader = () => {
         <IoNotifications
           className="text-primary font-bold rotate-y-180 cursor-pointer"
           size={22}
-        />
+        /> */}
 
-        <button className="bg-white border-[1.5px] px-5 py-1 text-primary border-primary rounded-md font-bold relative overflow-hidden transition-all duration-500 group">
+        <button className="bg-white border-[1.5px] px-4 py-1 mx-2 text-primary border-primary rounded-md font-bold relative overflow-hidden transition-all duration-500 group">
           <span className="absolute inset-0 bg-primary transform -translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out"></span>
+          <span className="relative z-10 group-hover:text-white transition-all duration-500 ease-in-out">
+            Sign Up
+          </span>
+        </button>
+
+        <button className="bg-white border-[1.5px] px-4 py-1 text-primary border-primary rounded-md font-bold relative overflow-hidden transition-all duration-500 group">
+          <span className="absolute inset-0 bg-primary transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out"></span>
           <span className="relative z-10 group-hover:text-white transition-all duration-500 ease-in-out">
             Login
           </span>
