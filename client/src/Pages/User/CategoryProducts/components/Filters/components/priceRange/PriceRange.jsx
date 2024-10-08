@@ -54,7 +54,7 @@ const PriceRange = () => {
               />
             </span>
           </div>
-          <button className="bg-primary text-white text-xs p-1 rounded-sm">
+          <button className="bg-primary text-white text-xs px-2 py-1 font-semibold rounded-sm">
             Done
           </button>
         </div>
