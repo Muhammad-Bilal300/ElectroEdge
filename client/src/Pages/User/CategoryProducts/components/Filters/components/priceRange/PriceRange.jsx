@@ -33,28 +33,24 @@ const PriceRange = () => {
           );
         })}
 
-        <div className="flex justify-between py-2">
-          <div>
-            <span>
-              <input
-                type="text"
-                maxLength={4}
-                placeholder="From"
-                className="border-[1px] text-sm outline-none border-gray w-[50px] rounded-sm px-1 py-0.5"
-              />
-            </span>
+        <div className="flex justify-between py-2 w-[100%] overflow-hidden">
+          <div className="border-[1px] text-sm border-gray w-[30%] rounded-sm py-1 bg-transparent">
+            <input
+              type="text"
+              maxLength={4}
+              placeholder="From"
+              className="outline-none border-none px-1"
+            />
           </div>
-          <div>
-            <span>
-              <input
-                type="text"
-                placeholder="To"
-                maxLength={4}
-                className="border-[1px] text-sm outline-none border-gray w-[50px] rounded-sm px-1 py-0.5"
-              />
-            </span>
+          <div className="border-[1px] text-sm border-gray w-[30%] rounded-sm  py-1 bg-transparent">
+            <input
+              type="text"
+              maxLength={4}
+              placeholder="To"
+              className="outline-none border-none px-1"
+            />
           </div>
-          <button className="bg-primary text-white text-xs px-2 py-1 font-semibold rounded-sm">
+          <button className="bg-primary text-white text-xs w-[30%] px-2 py-1 font-semibold rounded-sm">
             Done
           </button>
         </div>

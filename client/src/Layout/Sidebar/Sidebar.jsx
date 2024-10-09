@@ -36,7 +36,7 @@ const Sidebar = () => {
   return (
     <div
       className={`${
-        isCollapsed ? "min-w-[5%]" : "min-w-[16%]"
+        isCollapsed ? "min-w-[4.5%]" : "min-w-[16%]"
       } h-[100vh] bg-primary transition-all duration-500 ease-in-out`}
     >
       <div className="h-[10vh] bg-white shadow-md shadow-primary border-primary relative flex justify-center items-center ">
