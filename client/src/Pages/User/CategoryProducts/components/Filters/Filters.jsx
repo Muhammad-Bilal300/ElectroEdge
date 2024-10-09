@@ -5,7 +5,7 @@ import Trends from './components/trends/Trends'
 
 const Filters = () => {
     return (
-        <div className='w-[20%] shadow-md shadow-black max-h-[90vh] rounded-md p-4 flex flex-col space-y-2 overflow-auto'>
+        <div className='w-[20%] shadow-md shadow-black rounded-md p-4 flex flex-col space-y-2 min-h-[80vh] overflow-auto'>
             <PriceRange />
             <Brands />
             <Trends />

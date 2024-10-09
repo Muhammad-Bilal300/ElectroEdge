@@ -6,7 +6,9 @@ const Header = () => {
   return (
     <div>
       <Navbar />
-      <Categories />
+      <div className="pt-[60px]">
+        <Categories />
+      </div>
     </div>
   );
 };
