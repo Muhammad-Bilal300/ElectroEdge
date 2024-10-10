@@ -8,7 +8,9 @@ module.exports = {
       colors: {
         primary: '#FF6B17',   // Primary color set to orange
         secondary: 'black',  // Secondary color set to black
-        lightGray:"#f1f5f9",
+        // lightGray:"#f1f5f9",
+        lightGray:"#e8edf3",
+        
         // lightGray: "#e3e7ec",
         // bgcolor: "#f5f5f5",
         gray: "gray",

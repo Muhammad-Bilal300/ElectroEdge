@@ -10,10 +10,14 @@ import { HiOutlineDocumentReport } from "react-icons/hi";
 
 import { IoIosArrowBack } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useDispatch, useSelector } from "react-redux";
 
 import ElectroEdgeIcon from "../../Assets/ElectroEdge.PNG";
+import { setIsCollapsed } from "../../ReduxToolkit/Reducers/Admin/AdminGlobalStateSlice";
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
+  const { isCollapsed, width } = useSelector((state) => state.adminGlobalState);
   const options = [
     { icon: <LuLayoutDashboard />, name: "Dashboard" },
     { icon: <LuUsers />, name: "Users" },
@@ -27,16 +31,15 @@ const Sidebar = () => {
   ];
 
   const [selectedOption, setSelectedOption] = useState("");
-  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleSidebar = () => {
-    setIsCollapsed(!isCollapsed);
+    dispatch(setIsCollapsed(!isCollapsed));
   };
 
   return (
     <div
       className={`${
-        isCollapsed ? "min-w-[4.5%]" : "min-w-[16%]"
+        isCollapsed ? "w-[65px]" : "w-[260px]"
       } h-[100vh] bg-primary transition-all duration-500 ease-in-out`}
     >
       <div className="h-[10vh] bg-white shadow-md shadow-primary border-primary relative flex justify-center items-center ">
@@ -56,7 +59,7 @@ const Sidebar = () => {
         </div>
         {!isCollapsed && (
           <div
-            className="bg-primary w-7 h-7 flex justify-center items-center text-center rounded-full cursor-pointer relative right-[-9%] z-50"
+            className="bg-primary w-7 h-7 flex justify-center items-center text-center rounded-full cursor-pointer relative right-[-30px] z-50"
             onClick={toggleSidebar}
           >
             <IoIosArrowBack
