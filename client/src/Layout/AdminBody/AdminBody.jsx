@@ -42,7 +42,7 @@ const AdminBody = () => {
         </div>
       </div>
 
-      <div className="p-3">
+      <div className="p-4">
         <Outlet />
       </div>
     </div>

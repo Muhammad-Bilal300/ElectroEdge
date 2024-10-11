@@ -13,15 +13,18 @@ const Layout = () => {
     console.log(location.pathname.split("/"));
     if (location.pathname.split("/")[1] == "admin") {
       setUrl("admin");
+      console.log("true");
+      
     } else {
       setUrl("");
+      console.log("false");
     }
   }, [location.pathname]);
 
   return (
-    <div className={`${url == "admin" ? "flex" : ""}`}>
-      {url == "admin" ? <Sidebar /> : <Header />}
-      {url == "admin" ? <AdminBody /> : <Body />}
+    <div className={`${url === "admin" ? "flex" : ""}`}>
+      {url === "admin" ? <Sidebar /> : <Header />}
+      {url === "admin" ? <AdminBody /> : <Body />}
     </div>
   );
 };

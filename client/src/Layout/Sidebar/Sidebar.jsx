@@ -14,20 +14,22 @@ import { useDispatch, useSelector } from "react-redux";
 
 import ElectroEdgeIcon from "../../Assets/ElectroEdge.PNG";
 import { setIsCollapsed } from "../../ReduxToolkit/Reducers/Admin/AdminGlobalStateSlice";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { isCollapsed, width } = useSelector((state) => state.adminGlobalState);
   const options = [
-    { icon: <LuLayoutDashboard />, name: "Dashboard" },
-    { icon: <LuUsers />, name: "Users" },
-    { icon: <MdOutlineCategory />, name: "Categories" },
-    { icon: <TbBrandUnsplash />, name: "Brands" },
-    { icon: <RiProductHuntLine />, name: "Products" },
-    { icon: <BiCart />, name: "Orders" },
-    { icon: <BiPurchaseTag />, name: "Purchases" },
-    { icon: <LiaSellsy />, name: "Sales" },
-    { icon: <HiOutlineDocumentReport />, name: "Reports" },
+    { icon: <LuLayoutDashboard />, name: "Dashboard", link: "dashboard" },
+    { icon: <LuUsers />, name: "Users", link: "users" },
+    { icon: <MdOutlineCategory />, name: "Categories", link: "categories" },
+    { icon: <TbBrandUnsplash />, name: "Brands", link: "brands" },
+    { icon: <RiProductHuntLine />, name: "Products", link: "products" },
+    { icon: <BiCart />, name: "Orders", link: "orders" },
+    { icon: <BiPurchaseTag />, name: "Purchases", link: "purchases" },
+    { icon: <LiaSellsy />, name: "Sales", link: "sales" },
+    { icon: <HiOutlineDocumentReport />, name: "Reports", link: "reports" },
   ];
 
   const [selectedOption, setSelectedOption] = useState("");
@@ -59,7 +61,7 @@ const Sidebar = () => {
         </div>
         {!isCollapsed && (
           <div
-            className="bg-primary w-7 h-7 flex justify-center items-center text-center rounded-full cursor-pointer relative right-[-30px] z-50"
+            className="bg-primary w-7 h-7 flex justify-center items-center text-center rounded-full cursor-pointer relative right-[-25px] z-50"
             onClick={toggleSidebar}
           >
             <IoIosArrowBack
@@ -82,6 +84,7 @@ const Sidebar = () => {
               }`}
               onClick={() => {
                 setSelectedOption(option.name);
+                navigate(`/admin/${option.link}`);
               }}
             >
               <span className={`text-xl mr-3 `}>{option.icon}</span>
