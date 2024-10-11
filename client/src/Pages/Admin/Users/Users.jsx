@@ -27,7 +27,7 @@ const Users = () => {
             <IoMdRefresh className="text-gray text-[22px]" />
           </div>
           <div className="w-[36px] h-[36px] flex justify-center items-center rounded-md border-2 border-lightGray hover:bg-lightGray cursor-pointer">
-            <IoIosArrowUp className="text-gray text-[22px]" />
+            <IoIosArrowUp className="text-gray text-[22px]" /> 
           </div>
           <div className="h-[36px] px-3 flex justify-center items-center rounded-md border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold cursor-pointer">
             Add New User
