@@ -11,7 +11,7 @@ const Home = () => {
     <div className="w-[100%]" style={{ scrollbarWidth: "none" }}>
       <Hero />
       <BestDeals />
-      {/* <FlashSale /> */}
+      <FlashSale />
       <PopularSearch />
       {/* <WeeklyPopularProducts /> */}
       <RecentlyViewed />

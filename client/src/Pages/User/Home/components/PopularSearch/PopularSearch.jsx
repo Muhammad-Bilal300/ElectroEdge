@@ -116,10 +116,10 @@ const PopularSearch = () => {
           </button>
         </div>
       </div>
-      <div className="py-6 flex justify-between gap-x-7 overflow-x-auto scrollbar-hide">
+      <div className="py-6 flex justify-between gap-x-7 overflow-x-auto scrollbar-hide px-2">
         {dummyData.map((item, index) => {
           return (
-            <div className="min-w-[23%] border-[2px] border-lightGray rounded-md flex flex-col">
+            <div className="min-w-[24%] border-[1px] shadow-lg shadow-gray border-lightGray rounded-md flex flex-col cursor-pointer">
               {" "}
               {/* Added 'flex flex-col' */}
               <img
@@ -131,12 +131,12 @@ const PopularSearch = () => {
               <div className="p-3 flex-grow">
                 {" "}
                 {/* Added 'flex-grow' */}
-                <h2 className="text-xl font-bold truncate">{item.title}</h2>
-                <h6 className="text-sm text-gray py-2">
-                  {item.description.slice(0, 100)}{" "}
-                  {item.description.length > 100 && "..."}
+                <h2 className="text-lg font-bold truncate">{item.title}</h2>
+                <h6 className="text-sm text-gray py-1">
+                  {item.description.slice(0, 80)}{" "}
+                  {item.description.length > 80 && "..."}
                 </h6>
-                <div className="flex justify-between items-center py-1">
+                <div className="flex justify-between items-center pt-1">
                   <div className="flex gap-x-2 items-center">
                     <span className="text-primary text-xl font-semibold">
                       ${item.discountedPrice}
@@ -151,9 +151,7 @@ const PopularSearch = () => {
                         <FaStar
                           key={index}
                           className={`${
-                            i <= item.ratings
-                              ? "text-primary"
-                              : "text-lightGray"
+                            i <= item.ratings ? "text-primary" : "text-gray"
                           }`}
                         />
                       );
@@ -178,11 +176,11 @@ const PopularSearch = () => {
               </div>
               {/* The Buttons Section */}
               <div className="p-3 border-t-[1px] border-lightGray flex justify-between items-center">
-                <button className="h-[40px] w-[55%] px-5 border-2 bg-primary text-md text-white rounded-md font-semibold flex items-center gap-x-2">
+                <button className="h-[40px] w-[55%] px-3 border-2 bg-primary text-md text-white rounded-md font-semibold flex justify-center items-center gap-x-1">
                   <span>
                     <HiShoppingCart className="text-white" />
                   </span>
-                  <span>Buy Now</span>
+                  <span className="text-sm">Buy Now</span>
                 </button>
                 <button className="w-[18%] h-[38px] border-2 border-primary rounded-md flex justify-center items-center hover:bg-lightGray text-primary">
                   <MdOutlineFavorite className="text-xl" />
