@@ -14,7 +14,7 @@ import { MdOutlineFavorite } from "react-icons/md";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-const FlashSlae = () => {
+const FlashSale = () => {
   const dummyData = [
     {
       image: Laptop,
@@ -209,4 +209,4 @@ const FlashSlae = () => {
   );
 };
 
-export default FlashSlae;
+export default FlashSale;
