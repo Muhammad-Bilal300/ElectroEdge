@@ -178,14 +178,14 @@ const FlashSale = () => {
                 return (
                   <div
                     key={index}
-                    className="lg:min-w-[48%] min-w-[90%] bg-white rounded-md flex justify-start flex-row cursor-pointer p-2 relative"
+                    className="sm:min-w-[48%] min-w-[90%] bg-white rounded-md flex justify-start flex-row cursor-pointer p-2 relative"
                   >
                     <img
-                      className="h-[90px] w-[100px] rounded-md"
+                      className="h-[90px] w-[30%] rounded-md"
                       src={item.image}
                       alt=""
                     />
-                    <div className="px-3 flex-grow relative">
+                    <div className="px-3 flex-grow relative ">
                       <h2 className="text-md font-bold truncate">
                         {item.title.slice(0, 18)}
                         {item.title.length > 18 && "..."}

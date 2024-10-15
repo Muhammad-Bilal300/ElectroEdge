@@ -1,55 +1,22 @@
 import React from "react";
-import { GrFavorite } from "react-icons/gr";
-import {
-  IoCart,
-  IoCartOutline,
-  IoNotifications,
-  IoNotificationsOutline,
-} from "react-icons/io5";
-import { MdFavorite } from "react-icons/md";
+import { IoCart, IoNotifications } from "react-icons/io5";
 
 const RightHeader = () => {
   return (
-    <>
-      <style>
-        {`
-          .rotate-y-180 {
-            transition: transform 0.5s; /* Smooth transition for rotation */
-          }
-          .rotate-y-180:hover {
-            transform: rotateY(180deg) scale(1.136); /* Rotate horizontally and scale up */
-          }
-        `}
-      </style>
-      <div className="flex justify-end w-[22%] items-center">
-        {/* <MdFavorite
-          className="text-primary font-bold rotate-y-180 cursor-pointer"
-          size={20}
-        />
-        <IoCart
-          className="text-primary font-bold rotate-y-180 cursor-pointer"
-          size={22}
-        />
-        <IoNotifications
-          className="text-primary font-bold rotate-y-180 cursor-pointer"
-          size={22}
-        /> */}
-
-        <button className="bg-white border-[1.5px] px-4 py-1 mx-2 text-primary border-primary rounded-md font-bold relative overflow-hidden transition-all duration-500 group">
-          <span className="absolute inset-0 bg-primary transform -translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out"></span>
-          <span className="relative z-10 group-hover:text-white transition-all duration-500 ease-in-out">
-            Sign Up
-          </span>
-        </button>
-
-        <button className="bg-white border-[1.5px] px-4 py-1 text-primary border-primary rounded-md font-bold relative overflow-hidden transition-all duration-500 group">
-          <span className="absolute inset-0 bg-primary transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out"></span>
-          <span className="relative z-10 group-hover:text-white transition-all duration-500 ease-in-out">
-            Login
-          </span>
-        </button>
-      </div>
-    </>
+    <div className="flex justify-end items-center w-full md:w-auto">
+      <button className="bg-white border-[1.5px] px-2 py-1 mx-2 text-primary border-primary rounded-md font-bold relative overflow-hidden transition-all duration-500 group">
+        <span className="absolute inset-0 bg-primary transform -translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out"></span>
+        <span className="relative z-10 group-hover:text-white transition-all duration-500 ease-in-out">
+          Sign Up
+        </span>
+      </button>
+      <button className="bg-white border-[1.5px] px-2 py-1 text-primary border-primary rounded-md font-bold relative overflow-hidden transition-all duration-500 group">
+        <span className="absolute inset-0 bg-primary transform translate-y-full group-hover:translate-y-0 transition-all duration-500 ease-in-out"></span>
+        <span className="relative z-10 group-hover:text-white transition-all duration-500 ease-in-out">
+          Login
+        </span>
+      </button>
+    </div>
   );
 };
 

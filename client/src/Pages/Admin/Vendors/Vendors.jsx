@@ -3,11 +3,11 @@ import React from "react";
 import BodyHeader from "../../../Components/BodyHeader/BodyHeader";
 import HeaderActions from "../../../Components/HeaderActions/HeaderActions";
 
-const Brands = () => {
+const Vendors = () => {
   return (
     <div className="">
       <div className="flex justify-between items-center">
-        <BodyHeader heading="Brands" subHeading="Manage your brands" />
+        <BodyHeader heading="Vendors" subHeading="Manage your vendors" />
         <HeaderActions
           pdfAction={() => {}}
           excelAction={() => {}}
@@ -15,11 +15,11 @@ const Brands = () => {
           hideHeaderAction={() => {}}
           refreshAction={() => {}}
           addAction={() => {}}
-          addText="Add New Brand"
+          addText="Add New Vendor"
         />
       </div>
     </div>
   );
 };
 
-export default Brands;
+export default Vendors;

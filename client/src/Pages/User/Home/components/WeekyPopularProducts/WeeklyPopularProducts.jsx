@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Laptop from "../../../../../Assets/Laptop.jpg";
 import Headphone from "../../../../../Assets/Headphone.jpg";
 import Printer from "../../../../../Assets/Printer.jpg";
@@ -116,11 +116,25 @@ const WeekyPopularProducts = () => {
     },
   ];
 
+  const scrollRef = useRef(null);
+
+  const handleScrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
+
+  const handleScrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="w-[80%] mx-auto pt-14">
-      <div className="bg-lightGray p-9 rounded-lg">
-        <div className="flex items-center gap-x-6">
-          <div className="w-[25%]">
+    <div className="w-[90%] lg:w-[80%] mx-auto pt-14">
+      <div className="bg-lightGray p-4 lg:p-9 rounded-lg">
+        <div className="py-4 lg:flex lg:items-center gap-x-5">
+          <div className="lg:w-[25%] w-full text-center">
             <div className="flex justify-center text-center ">
               <h3 className="font-bold text-3xl text-black">Recommended</h3>
             </div>
@@ -129,10 +143,16 @@ const WeekyPopularProducts = () => {
             </p>
             {/*  */}
             <div className="flex gap-x-2 justify-center">
-              <button className="w-[30px] h-[30px] rounded-full  bg-black flex justify-center items-center">
+              <button
+                onClick={handleScrollLeft}
+                className="w-[30px] h-[30px] rounded-full  bg-black flex justify-center items-center"
+              >
                 <MdKeyboardArrowLeft className="text-3xl text-white  " />
               </button>
-              <button className="w-[30px] h-[30px] rounded-full bg-black   flex justify-center items-center">
+              <button
+                onClick={handleScrollRight}
+                className="w-[30px] h-[30px] rounded-full bg-black   flex justify-center items-center"
+              >
                 <MdKeyboardArrowRight className="text-3xl text-white  " />
               </button>
             </div>
@@ -147,96 +167,77 @@ const WeekyPopularProducts = () => {
               </span>
             </h6>
           </div>
-          <div className="w-[75%]">
-            <div className="flex justify-between gap-x-7 overflow-x-auto scrollbar-hide p-4">
-              {dummyData.map((item, index) => {
-                return (
-                  <div className="min-w-[33%] shadow-lg shadow-gray bg-white  rounded-md flex flex-col cursor-pointer">
-                    {" "}
-                    {/* Added 'flex flex-col' */}
-                    <div className="relative">
-                      <img
-                        className="h-[180px] w-[100%] rounded-t-md"
-                        src={item.image}
-                        alt=""
-                      />
-                      <div className="pt-3 px-3 border-t-[1px] border-lightGray flex justify-end items-center gap-x-3 absolute top-0 right-0">
-                        <button className="min-w-[40px] h-[40px] bg-primary  rounded-full flex justify-center items-center text-white">
-                          <MdOutlineFavorite className="text-xl" />
-                        </button>
-                        <button className="min-w-[40px] h-[40px] bg-primary rounded-full flex justify-center items-center  text-white">
-                          <HiShoppingCart className="text-xl" />
-                        </button>
-                      </div>
-                    </div>
-                    {/* Content Area */}
-                    <div className="p-3 flex-grow">
-                      {" "}
-                      {/* Added 'flex-grow' */}
-                      <h2 className="text-lg font-bold truncate">
-                        {item.title}
-                      </h2>
-                      <div className="flex justify-between items-center">
-                        <div className="flex gap-x-2 items-center">
-                          <span className="text-primary text-md font-semibold">
-                            ${item.discountedPrice}
-                          </span>
-                          <span className="text-gray text-sm font-semibold line-through">
-                            ${item.actualPrice}
-                          </span>
-                        </div>
-                        <div className="flex items-center text-sm text-gray">
-                          {[1, 2, 3, 4, 5].map((i, index) => {
-                            return (
-                              <FaStar
-                                key={index}
-                                className={`text-sm ${
-                                  i <= item.ratings
-                                    ? "text-primary"
-                                    : "text-gray"
-                                }`}
-                              />
-                            );
-                          })}
-                          (10)
-                        </div>
-                      </div>
-                      <h6 className="pt-3 flex text-sm font-semibold justify-center">
-                        <span className="text-primary">140</span>
-                        <span className="text-gray px-1 ">
-                          units sold out of 195
-                        </span>
-                      </h6>
-                      <h6 className="flex text-sm justify-center">
-                        <span className="text-gray">(in just 1 week)</span>
-                      </h6>
-                      <div className="w-full py-3">
-                        <div className="flex justify-center py-1 text-sm text-primary">
-                          45 left
-                        </div>
-                        <div className="w-full rounded-full h-2.5 bg-lightGray">
-                          <div className="bg-primary h-2.5 rounded-full w-[45%]"></div>
-                        </div>
-                      </div>
-                    </div>
-                    {/* The Buttons Section */}
-                    {/* <div className="p-3 border-t-[1px] border-lightGray flex justify-between items-center">
-                      <button className="h-[40px] w-[55%] px-3 border-2 bg-primary text-md text-white rounded-md font-semibold flex justify-center items-center gap-x-1">
-                        <span>
-                          <HiShoppingCart className="text-white" />
-                        </span>
-                        <span className="text-sm">Buy Now</span>
-                      </button>
-                      <button className="w-[18%] h-[38px] border-2 border-primary rounded-md flex justify-center items-center hover:bg-lightGray text-primary">
+
+          {/* Scrollable Items */}
+          <div className="lg:pt-0 pt-6 lg:w-[75%] w-full overflow-hidden">
+            <div
+              ref={scrollRef}
+              className="flex gap-x-7 overflow-x-auto scroll-smooth scrollbar-hide p-3 py-4"
+            >
+              {dummyData.map((item, index) => (
+                <div
+                  key={index}
+                  className="lg:min-w-[35%] sm:min-w-[45%]  min-w-[87%] shadow-lg shadow-gray bg-white rounded-md flex flex-col cursor-pointer"
+                >
+                  <div className="relative">
+                    <img
+                      className="h-[180px] w-full rounded-t-md"
+                      src={item.image}
+                      alt={item.title}
+                    />
+                    <div className="pt-3 px-3 border-t border-lightGray flex justify-end items-center gap-x-3 absolute top-0 right-0">
+                      <button className="min-w-[40px] h-[40px] bg-primary rounded-full flex justify-center items-center text-white">
                         <MdOutlineFavorite className="text-xl" />
                       </button>
-                      <button className="w-[18%] h-[38px] border-2 border-primary rounded-md flex justify-center items-center  hover:bg-lightGray text-primary">
+                      <button className="min-w-[40px] h-[40px] bg-primary rounded-full flex justify-center items-center text-white">
                         <HiShoppingCart className="text-xl" />
                       </button>
-                    </div> */}
+                    </div>
                   </div>
-                );
-              })}
+
+                  <div className="p-3 flex-grow">
+                    <h2 className="text-lg font-bold truncate">{item.title}</h2>
+                    <div className="flex justify-between items-center">
+                      <div className="flex gap-x-2 items-center">
+                        <span className="text-primary text-md font-semibold">
+                          ${item.discountedPrice}
+                        </span>
+                        <span className="text-gray text-sm font-semibold line-through">
+                          ${item.actualPrice}
+                        </span>
+                      </div>
+                      <div className="flex items-center text-sm text-gray">
+                        {[1, 2, 3, 4, 5].map((i) => (
+                          <FaStar
+                            key={i}
+                            className={`text-sm ${
+                              i <= item.ratings ? "text-primary" : "text-gray"
+                            }`}
+                          />
+                        ))}
+                        (10)
+                      </div>
+                    </div>
+                    <h6 className="pt-3 flex text-sm font-semibold justify-center">
+                      <span className="text-primary">140</span>
+                      <span className="text-gray px-1">
+                        units sold out of 195
+                      </span>
+                    </h6>
+                    <h6 className="flex text-sm justify-center">
+                      <span className="text-gray">(in just 1 week)</span>
+                    </h6>
+                    <div className="w-full py-3">
+                      <div className="flex justify-center py-1 text-sm text-primary">
+                        45 left
+                      </div>
+                      <div className="w-full rounded-full h-2.5 bg-lightGray">
+                        <div className="bg-primary h-2.5 rounded-full w-[45%]"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

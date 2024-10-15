@@ -49,12 +49,14 @@ const HeaderActions = ({
       >
         <IoIosArrowUp className="text-gray text-[22px]" />
       </div>
-      <div
-        onClick={addAction}
-        className="h-[36px] px-3 text-sm flex gap-x-2 justify-center items-center rounded-md bg-primary text-white font-semibold cursor-pointer"
-      >
-        <IoAddCircle className="text-white text-[20px]" /> {addText}
-      </div>
+      {addText !== "" && (
+        <div
+          onClick={addAction}
+          className="h-[36px] px-3 text-sm flex gap-x-2 justify-center items-center rounded-md bg-primary text-white font-semibold cursor-pointer"
+        >
+          <IoAddCircle className="text-white text-[20px]" /> {addText}
+        </div>
+      )}
     </div>
   );
 };

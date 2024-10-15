@@ -26,8 +26,9 @@ const Sidebar = () => {
     { icon: <MdOutlineCategory />, name: "Categories", link: "categories" },
     { icon: <TbBrandUnsplash />, name: "Brands", link: "brands" },
     { icon: <RiProductHuntLine />, name: "Products", link: "products" },
-    { icon: <BiCart />, name: "Orders", link: "orders" },
+    { icon: <LuUsers />, name: "Vendors", link: "vendors" },
     { icon: <BiPurchaseTag />, name: "Purchases", link: "purchases" },
+    { icon: <BiCart />, name: "Orders", link: "orders" },
     { icon: <LiaSellsy />, name: "Sales", link: "sales" },
     { icon: <HiOutlineDocumentReport />, name: "Reports", link: "reports" },
   ];

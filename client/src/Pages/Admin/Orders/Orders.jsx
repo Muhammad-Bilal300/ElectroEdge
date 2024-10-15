@@ -15,7 +15,7 @@ const Orders = () => {
           hideHeaderAction={() => {}}
           refreshAction={() => {}}
           addAction={() => {}}
-          addText="Add New Order"
+          addText=""
         />
       </div>
     </div>

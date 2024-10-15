@@ -6,8 +6,8 @@ const SearchBar = () => {
 
   return (
     <div
-      className={`bg-lightGray flex items-center text-center py-2 px-4 rounded-md transition-all duration-300 ${
-        isFocused ? "w-[50%]" : "w-[30%]"
+      className={`bg-lightGray flex justify-center items-center text-center py-2 px-4 rounded-md transition-all duration-300 ${
+        isFocused ? "w-full" : "w-[60%]"
       }`}
     >
       <input
