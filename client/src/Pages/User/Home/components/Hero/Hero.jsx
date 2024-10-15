@@ -31,16 +31,16 @@ const Hero = () => {
   };
 
   const settings = {
-    dots: true, // Enable dot indicators
-    infinite: true, // Infinite scrolling of images
-    speed: 500, // Transition speed
-    slidesToShow: 1, // Show one slide at a time
-    slidesToScroll: 1, // Scroll one slide at a time
-    autoplay: true, // Enable auto-play
-    autoplaySpeed: 2000, // Time interval of 2 seconds
-    arrows: true, // Enable left/right navigation arrows
-    prevArrow: <PreviousArrow />, // Custom previous arrow
-    nextArrow: <NextArrow />, // Custom next arrow
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: true,
+    prevArrow: <PreviousArrow />,
+    nextArrow: <NextArrow />,
     appendDots: (dots, index) => (
       <div
         style={{
@@ -68,31 +68,29 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-[80%] mx-auto rounded-md">
-      {/* Adjust container width */}
+    <div className="relative w-[90%] lg:w-[80%] mx-auto rounded-md">
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index} className="relative w-full group cursor-pointer">
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-[75vh] object-cover rounded-md mx-auto"
+              className="w-full h-[30vh] sm:h-[45vh] md:h-[55vh] lg:h-[75vh] object-cover rounded-md mx-auto"
             />
             {/* Overlay */}
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-500 rounded-md"></div>
             {/* Text overlay */}
-            <div className="absolute inset-0 flex justify-center items-center flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <h4 className="text-xl font-bold text-primary my-3">
+            <div className="absolute inset-0 flex justify-center items-center flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-500 px-4">
+              <h4 className="text-lg sm:text-xl font-bold text-primary my-3">
                 Hot Products
               </h4>
-              <h2 className="text-3xl font-bold text-white w-[40%] text-center">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white text-center w-full sm:w-[80%] md:w-[60%] lg:w-[40%]">
                 You will find the Best Quality Products Here..
               </h2>
             </div>
           </div>
         ))}
       </Slider>
-      {/* Custom Styling for Active and Inactive Dots */}
       <style>
         {`
           .slick-dots li.slick-active div {

@@ -13,7 +13,7 @@ const Home = () => {
       <BestDeals />
       <FlashSale />
       <PopularSearch />
-      <WeeklyPopularProducts />
+      {/* <WeeklyPopularProducts /> */}
       <RecentlyViewed />
     </div>
   );

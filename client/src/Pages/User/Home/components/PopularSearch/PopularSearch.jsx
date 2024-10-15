@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Laptop from "../../../../../Assets/Laptop.jpg";
 import Headphone from "../../../../../Assets/Headphone.jpg";
 import Printer from "../../../../../Assets/Printer.jpg";
@@ -95,8 +95,24 @@ const PopularSearch = () => {
     },
   ];
 
+  const containerRef = useRef(null); // Ref for the container
+
+  const scrollLeft = () => {
+    containerRef.current.scrollBy({
+      left: -300, // Adjust the scroll amount as needed
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    containerRef.current.scrollBy({
+      left: 300, // Adjust the scroll amount as needed
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className="w-[80%] mx-auto pt-14">
+    <div className="w-[90%] lg:w-[80%] mx-auto pt-14">
       <div className="flex justify-between items-center">
         <div>
           <h3 className="font-bold text-2xl">Popular Search</h3>
@@ -108,90 +124,88 @@ const PopularSearch = () => {
           </h6>
         </div>
         <div className="flex gap-x-2">
-          <button className="w-[30px] h-[30px] rounded-full border-[1px] border-black  flex justify-center items-center">
+          <button
+            onClick={scrollLeft}
+            className="w-[30px] h-[30px] rounded-full border-[1px] border-black flex justify-center items-center"
+          >
             <MdKeyboardArrowLeft className="text-3xl text-gray" />
           </button>
-          <button className="w-[30px] h-[30px] rounded-full border-[1px] border-black  flex justify-center items-center">
+          <button
+            onClick={scrollRight}
+            className="w-[30px] h-[30px] rounded-full border-[1px] border-black flex justify-center items-center"
+          >
             <MdKeyboardArrowRight className="text-3xl text-gray" />
           </button>
         </div>
       </div>
-      <div className="py-6 flex justify-between gap-x-7 overflow-x-auto scrollbar-hide px-2">
-        {dummyData.map((item, index) => {
-          return (
-            <div className="min-w-[24%] border-[1px] shadow-lg shadow-gray border-lightGray rounded-md flex flex-col cursor-pointer">
-              {" "}
-              {/* Added 'flex flex-col' */}
-              <img
-                className="h-[180px] w-[100%] rounded-t-md"
-                src={item.image}
-                alt=""
-              />
-              {/* Content Area */}
-              <div className="p-3 flex-grow">
-                {" "}
-                {/* Added 'flex-grow' */}
-                <h2 className="text-lg font-bold truncate">{item.title}</h2>
-                <h6 className="text-sm text-gray py-1">
-                  {item.description.slice(0, 80)}{" "}
-                  {item.description.length > 80 && "..."}
-                </h6>
-                <div className="flex justify-between items-center pt-1">
-                  <div className="flex gap-x-2 items-center">
-                    <span className="text-primary text-xl font-semibold">
-                      ${item.discountedPrice}
-                    </span>
-                    <span className="text-gray text-md font-semibold line-through">
-                      ${item.actualPrice}
-                    </span>
-                  </div>
-                  <div className="flex">
-                    {[1, 2, 3, 4, 5].map((i, index) => {
-                      return (
-                        <FaStar
-                          key={index}
-                          className={`${
-                            i <= item.ratings ? "text-primary" : "text-gray"
-                          }`}
-                        />
-                      );
-                    })}
-                  </div>
-                </div>
-                {/* <div className="px-4 py-2">
-                  {item.addOns.map((addOn, index) => {
-                    return (
-                      <p
-                        key={index}
-                        className="py-1 text-xs flex items-center gap-x-3"
-                      >
-                        <span>
-                          <GiCheckMark className="text-primary" />
-                        </span>
-                        <span className="text-gray">{addOn}</span>
-                      </p>
-                    );
-                  })}
-                </div> */}
-              </div>
-              {/* The Buttons Section */}
-              <div className="p-3 border-t-[1px] border-lightGray flex justify-between items-center">
-                <button className="h-[40px] w-[55%] px-3 border-2 bg-primary text-md text-white rounded-md font-semibold flex justify-center items-center gap-x-1">
-                  <span>
-                    <HiShoppingCart className="text-white" />
+
+      <div
+        ref={containerRef}
+        className="py-6 flex gap-x-7 overflow-x-auto scrollbar-hide px-2"
+        style={{ scrollBehavior: "smooth" }}
+      >
+        {dummyData.map((item, index) => (
+          <div
+            key={index}
+            className="min-w-[80%] sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[24%] border-[1px] shadow-lg shadow-gray border-lightGray rounded-md flex flex-col cursor-pointer"
+          >
+            <img
+              className="h-[180px] w-[100%] rounded-t-md"
+              src={item.image}
+              alt={item.title}
+            />
+            <div className="p-3 flex-grow">
+              <h2 className="text-lg font-bold truncate">{item.title}</h2>
+              <h6 className="text-sm text-gray py-1">
+                {item.description.slice(0, 80)}{" "}
+                {item.description.length > 80 && "..."}
+              </h6>
+              <div className="flex justify-between items-center pt-1">
+                <div className="flex gap-x-2 items-center">
+                  <span className="text-primary text-xl font-semibold">
+                    ${item.discountedPrice}
                   </span>
-                  <span className="text-sm">Buy Now</span>
-                </button>
-                <button className="w-[18%] h-[38px] border-2 border-primary rounded-md flex justify-center items-center hover:bg-lightGray text-primary">
-                  <MdOutlineFavorite className="text-xl" />
-                </button>
-                <button className="w-[18%] h-[38px] border-2 border-primary rounded-md flex justify-center items-center  hover:bg-lightGray text-primary">
-                  <HiShoppingCart className="text-xl" />
-                </button>
+                  <span className="text-gray text-md font-semibold line-through">
+                    ${item.actualPrice}
+                  </span>
+                </div>
+                <div className="flex">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <FaStar
+                      key={i}
+                      className={`${
+                        i <= item.ratings ? "text-primary" : "text-gray"
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
+              {/* <div className="px-4 pt-2">
+                {item.addOns.slice(0, 3).map((addOn, index) => (
+                  <p
+                    key={index}
+                    className="py-1 text-xs flex items-center gap-x-3"
+                  >
+                    <GiCheckMark className="text-primary" />
+                    <span className="text-gray">{addOn}</span>
+                  </p>
+                ))}
+              </div> */}
             </div>
-          );
-        })}
+            <div className="p-3 border-t-[1px] border-lightGray flex justify-between items-center">
+              <button className="h-[40px] w-[55%] px-3 border-2 bg-primary text-md text-white rounded-md font-semibold flex justify-center items-center gap-x-1">
+                <HiShoppingCart className="text-white" />
+                <span className="text-sm">Buy Now</span>
+              </button>
+              <button className="w-[18%] h-[38px] border-2 border-primary rounded-md flex justify-center items-center hover:bg-lightGray text-primary">
+                <MdOutlineFavorite className="text-xl" />
+              </button>
+              <button className="w-[18%] h-[38px] border-2 border-primary rounded-md flex justify-center items-center  hover:bg-lightGray text-primary">
+                <HiShoppingCart className="text-xl" />
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

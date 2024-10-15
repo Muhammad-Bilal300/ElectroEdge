@@ -1,16 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import Laptop from "../../../../../Assets/Laptop.jpg";
 import Headphone from "../../../../../Assets/Headphone.jpg";
 import Printer from "../../../../../Assets/Printer.jpg";
 import Speaker from "../../../../../Assets/Speakers.jpg";
 import Keyboard from "../../../../../Assets/Keyboard.jpg";
 
-import { GiCheckMark } from "react-icons/gi";
-
 import { FaStar } from "react-icons/fa6";
 
-import { HiShoppingCart } from "react-icons/hi";
-import { MdOutlineFavorite } from "react-icons/md";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
@@ -116,51 +112,85 @@ const FlashSale = () => {
     },
   ];
 
+  const scrollRef = useRef(null);
+
+  // Function to scroll left
+  const handleScrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -300, // Adjust scroll distance
+        behavior: "smooth",
+      });
+    }
+  };
+
+  // Function to scroll right
+  const handleScrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: 300, // Adjust scroll distance
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <div className="w-[80%] mx-auto pt-14">
-      <div className="bg-primary p-9 rounded-lg">
+    <div className="w-[90%] lg:w-[80%] mx-auto pt-14">
+      <div className="bg-primary lg:p-9 p-4 rounded-lg">
         <div className="flex justify-between items-center">
           <div>
             <h3 className="font-bold text-3xl text-white">Flash Sale</h3>
           </div>
           <div className="flex gap-x-2">
-            <button className="w-[30px] h-[30px] rounded-full  bg-white flex justify-center items-center">
-              <MdKeyboardArrowLeft className="text-3xl text-primary  " />
+            <button
+              className="w-[30px] h-[30px] rounded-full bg-white flex justify-center items-center"
+              onClick={handleScrollLeft}
+            >
+              <MdKeyboardArrowLeft className="text-3xl text-primary" />
             </button>
-            <button className="w-[30px] h-[30px] rounded-full bg-white   flex justify-center items-center">
-              <MdKeyboardArrowRight className="text-3xl text-primary  " />
+            <button
+              className="w-[30px] h-[30px] rounded-full bg-white flex justify-center items-center"
+              onClick={handleScrollRight}
+            >
+              <MdKeyboardArrowRight className="text-3xl text-primary" />
             </button>
           </div>
         </div>
 
-        <div className="py-5 flex items-end">
-          <div className="w-[30%]">
+        <div className="py-4 lg:flex lg:items-end gap-x-5">
+          <div className="lg:w-[30%] w-full">
             <p className="text-sm text-lightGray mb-5">
               Explicabo pariatur exercitationem sapiente porro nesciunt,
               doloremque eos.
             </p>
-            <div className="bg-black p-3 flex justify-center items-center rounded-lg text-3xl text-white w-[90%]">
+            <div className="bg-black p-3 flex justify-center items-center rounded-lg text-3xl text-white w-full">
               05 : 22 : 19 : 54
             </div>
           </div>
-          <div className="w-[70%]">
-            <div className="flex justify-between gap-x-4 overflow-x-auto scrollbar-hide">
+
+          {/* Scrollable Items */}
+          <div className="lg:pt-0 pt-6 lg:w-[70%] w-full overflow-hidden">
+            <div
+              ref={scrollRef}
+              className="flex justify-between gap-x-4 overflow-x-auto scroll-smooth scrollbar-hide"
+            >
               {dummyData.map((item, index) => {
                 return (
-                  <div className="min-w-[48%] bg-white rounded-md flex justify-start flex-row cursor-pointer p-2 relative">
+                  <div
+                    key={index}
+                    className="lg:min-w-[48%] min-w-[90%] bg-white rounded-md flex justify-start flex-row cursor-pointer p-2 relative"
+                  >
                     <img
                       className="h-[90px] w-[100px] rounded-md"
                       src={item.image}
                       alt=""
                     />
-
                     <div className="px-3 flex-grow relative">
                       <h2 className="text-md font-bold truncate">
-                        {item.title.slice(0, 20)}
-                        {item.title.length > 20 && "..."}
+                        {item.title.slice(0, 18)}
+                        {item.title.length > 18 && "..."}
                       </h2>
-
-                      <div className="flex justify-between items-center ">
+                      <div className="flex justify-between items-center">
                         <div className="flex gap-x-2 items-center">
                           <span className="text-primary text-md font-semibold">
                             ${item.discountedPrice}
@@ -170,18 +200,14 @@ const FlashSale = () => {
                           </span>
                         </div>
                         <div className="flex">
-                          {[1, 2, 3, 4, 5].map((i, index) => {
-                            return (
-                              <FaStar
-                                key={index}
-                                className={`text-xs ${
-                                  i <= item.ratings
-                                    ? "text-primary"
-                                    : "text-gray"
-                                }`}
-                              />
-                            );
-                          })}
+                          {[1, 2, 3, 4, 5].map((i, index) => (
+                            <FaStar
+                              key={index}
+                              className={`text-xs ${
+                                i <= item.ratings ? "text-primary" : "text-gray"
+                              }`}
+                            />
+                          ))}
                         </div>
                       </div>
 
@@ -201,8 +227,9 @@ const FlashSale = () => {
             </div>
           </div>
         </div>
+
         <div className="text-white text-sm font-semibold flex justify-end cursor-pointer">
-          <span className="hover:underline ">View More</span>
+          <span className="hover:underline">View More</span>
         </div>
       </div>
     </div>
