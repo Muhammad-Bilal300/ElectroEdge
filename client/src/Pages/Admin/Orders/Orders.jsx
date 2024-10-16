@@ -7,7 +7,7 @@ const Orders = () => {
   return (
     <div className="">
       <div className="flex justify-between items-center">
-        <BodyHeader heading="Orders" subHeading="Manage your reports" />
+        <BodyHeader heading="Orders" subHeading="Manage your orders" />
         <HeaderActions
           pdfAction={() => {}}
           excelAction={() => {}}
