@@ -16,8 +16,9 @@ const Reports = () => {
           refreshAction={() => {}}
           addAction={() => {}}
           addText="Generate New Report"
+          importAction={() => {}}
+          importText=""
         />
-       
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ const Sidebar = () => {
   const { isCollapsed, width } = useSelector((state) => state.adminGlobalState);
   const options = [
     { icon: <LuLayoutDashboard />, name: "Dashboard", link: "dashboard" },
-    { icon: <LuUsers />, name: "Users", link: "users" },
+    { icon: <LuUsers />, name: "Customers", link: "customers" },
     { icon: <MdOutlineCategory />, name: "Categories", link: "categories" },
     { icon: <TbBrandUnsplash />, name: "Brands", link: "brands" },
     { icon: <RiProductHuntLine />, name: "Products", link: "products" },

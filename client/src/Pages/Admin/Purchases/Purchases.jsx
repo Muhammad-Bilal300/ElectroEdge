@@ -16,8 +16,9 @@ const Purchases = () => {
           refreshAction={() => {}}
           addAction={() => {}}
           addText="Create New Purchase Invoice"
+          importAction={() => {}}
+          importText=""
         />
-       
       </div>
     </div>
   );

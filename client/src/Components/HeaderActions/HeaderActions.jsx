@@ -6,6 +6,8 @@ import { IoMdPrint } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoMdRefresh } from "react-icons/io";
 
+import { MdOutlineFileDownload } from "react-icons/md";
+
 import { IoAddCircle } from "react-icons/io5";
 
 const HeaderActions = ({
@@ -16,6 +18,8 @@ const HeaderActions = ({
   hideHeaderAction,
   addAction,
   addText,
+  importText,
+  importAction,
 }) => {
   return (
     <div className="flex gap-x-3">
@@ -55,6 +59,15 @@ const HeaderActions = ({
           className="h-[36px] px-3 text-sm flex gap-x-2 justify-center items-center rounded-md bg-primary text-white font-semibold cursor-pointer"
         >
           <IoAddCircle className="text-white text-[20px]" /> {addText}
+        </div>
+      )}
+      {importText !== "" && (
+        <div
+          onClick={importAction}
+          className="h-[36px] px-3 text-sm flex gap-x-2 justify-center items-center rounded-md bg-black text-white font-semibold cursor-pointer"
+        >
+          <MdOutlineFileDownload className="text-white text-[20px]" />
+          {importText}
         </div>
       )}
     </div>

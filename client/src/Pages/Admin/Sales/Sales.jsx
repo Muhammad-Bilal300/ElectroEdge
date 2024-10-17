@@ -16,8 +16,9 @@ const Sales = () => {
           refreshAction={() => {}}
           addAction={() => {}}
           addText="Create New Sale Invoice"
+          importAction={() => {}}
+          importText=""
         />
-       
       </div>
     </div>
   );

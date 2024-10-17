@@ -30,7 +30,7 @@ const Routers = () => {
         {/* Redirect /admin to /admin/dashboard */}
         <Route index element={<Navigate to="/admin/dashboard" replace />} />
         <Route path="/admin/dashboard" element={<Dashboard />} />
-        <Route path="/admin/users" element={<Users />} />
+        <Route path="/admin/customers" element={<Users />} />
         <Route path="/admin/categories" element={<Categories />} />
         <Route path="/admin/brands" element={<Brands />} />
         <Route path="/admin/products" element={<Products />} />

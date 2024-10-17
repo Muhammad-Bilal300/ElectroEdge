@@ -16,6 +16,8 @@ const Orders = () => {
           refreshAction={() => {}}
           addAction={() => {}}
           addText=""
+          importAction={() => {}}
+          importText=""
         />
       </div>
     </div>
