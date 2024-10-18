@@ -21,7 +21,7 @@ const Layout = () => {
   }, [location.pathname]);
 
   return (
-    <div className={`${url === "admin" ? "flex" : ""}`}>
+    <div className={`${url === "admin" ? "flex" : ""} `}>
       {url === "admin" ? <Sidebar /> : <Header />}
 
       {url === "admin" ? <AdminBody /> : <Body />}

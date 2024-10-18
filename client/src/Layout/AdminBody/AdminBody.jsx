@@ -20,7 +20,7 @@ const AdminBody = () => {
             <img
               src={ElectroEdgeIcon}
               alt="ElectroEdge"
-              className="h-[2rem] cursor-pointer  max-w-[200px]"
+              className="h-[2rem] cursor-pointer max-w-[200px]"
             />
           )}
         </div>
@@ -42,7 +42,7 @@ const AdminBody = () => {
         </div>
       </div>
 
-      <div className="px-5 py-4">
+      <div className="px-5 py-4 h-[90vh] overflow-y-auto">
         <Outlet />
       </div>
     </div>
