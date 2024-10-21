@@ -13,12 +13,17 @@ import Categories from "../Pages/Admin/Categories/Categories";
 import Brands from "../Pages/Admin/Brands/Brands";
 import Vendors from "../Pages/Admin/Vendors/Vendors";
 import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
+import SingleProductDetail from "../Pages/User/SingleProductDetail/SingleProductDetail";
 
 const Routers = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route
+          path="/products/:name/detail"
+          element={<SingleProductDetail />}
+        />
 
         <Route
           path={`/category/:name/products`}

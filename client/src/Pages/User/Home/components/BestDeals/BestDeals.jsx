@@ -13,6 +13,7 @@ import { HiShoppingCart } from "react-icons/hi";
 import { MdOutlineFavorite } from "react-icons/md";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const BestDeals = () => {
   const dummyData = [
@@ -115,6 +116,7 @@ const BestDeals = () => {
       addOns: ["Wireless Speaker", "Wireless Headset"],
     },
   ];
+  const navigate = useNavigate();
 
   const containerRef = useRef(null); // Ref for the container
 
@@ -167,6 +169,9 @@ const BestDeals = () => {
       >
         {dummyData.map((item, index) => (
           <div
+            onClick={() => {
+              navigate(`/products/${item.title}/detail`);
+            }}
             key={index}
             className="min-w-[80%] sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[24%] border-[1px] shadow-lg shadow-gray border-lightGray rounded-md flex flex-col cursor-pointer"
           >
