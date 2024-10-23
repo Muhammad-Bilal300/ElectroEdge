@@ -178,7 +178,7 @@ const FlashSale = () => {
                 return (
                   <div
                     key={index}
-                    className="sm:min-w-[48%] min-w-[90%] bg-white rounded-md flex justify-start flex-row cursor-pointer p-2 relative"
+                    className="sm:min-w-[48%] min-w-[90%] bg-white rounded-md flex justify-start flex-row cursor-pointer p-2 relative hover:bg-lightGray"
                   >
                     <img
                       className="h-[90px] w-[30%] rounded-md"

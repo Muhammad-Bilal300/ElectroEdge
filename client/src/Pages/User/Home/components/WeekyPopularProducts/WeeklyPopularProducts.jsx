@@ -177,7 +177,7 @@ const WeekyPopularProducts = () => {
               {dummyData.map((item, index) => (
                 <div
                   key={index}
-                  className="lg:min-w-[35%] sm:min-w-[45%]  min-w-[87%] shadow-lg shadow-gray bg-white rounded-md flex flex-col cursor-pointer"
+                  className="lg:min-w-[35%] sm:min-w-[45%]  min-w-[87%] shadow-lg shadow-gray bg-white rounded-md flex flex-col cursor-pointer "
                 >
                   <div className="relative">
                     <img
@@ -199,7 +199,7 @@ const WeekyPopularProducts = () => {
                     <h2 className="text-lg font-bold truncate">{item.title}</h2>
                     <div className="flex justify-between items-center">
                       <div className="flex gap-x-2 items-center">
-                        <span className="text-primary text-md font-semibold">
+                        <span className="text-primary text-lg font-semibold">
                           ${item.discountedPrice}
                         </span>
                         <span className="text-gray text-sm font-semibold line-through">
@@ -220,11 +220,9 @@ const WeekyPopularProducts = () => {
                     </div>
                     <h6 className="pt-3 flex text-sm font-semibold justify-center">
                       <span className="text-primary">140</span>
-                      <span className="text-gray px-1">
-                        units sold out of 195
-                      </span>
+                      <span className="text-gray px-1">units sold out</span>
                     </h6>
-                    <h6 className="flex text-sm justify-center">
+                    <h6 className="flex text-xs justify-center">
                       <span className="text-gray">(in just 1 week)</span>
                     </h6>
                     <div className="w-full py-3">

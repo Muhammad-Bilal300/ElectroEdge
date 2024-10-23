@@ -20,3 +20,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+body {
+  padding: 0;
+  margin: 0;
+}

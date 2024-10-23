@@ -14,7 +14,7 @@ import { MdOutlineFavorite } from "react-icons/md";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-const RecentlyViewed = () => {
+const RelatedProducts = () => {
   const dummyData = [
     {
       image: Laptop,
@@ -59,6 +59,40 @@ const RecentlyViewed = () => {
       ratings: "5",
       addOns: ["Wireless Speaker", "Wireless Headset"],
     },
+
+    {
+      image: Printer,
+      description:
+        " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+
+      title: "Printers Collection",
+      discountedPrice: 530,
+      actualPrice: 470,
+      ratings: "3",
+      addOns: ["Wireless Printer", "laser Printer", "Color Printer"],
+    },
+    {
+      image: Headphone,
+      description:
+        " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+
+      title: "All in One Headphone",
+      discountedPrice: 220,
+      actualPrice: 280,
+      ratings: "5",
+      addOns: ["Echo Headset", "Wireless Keyboard", "64 GB SSD", "32 GB USB"],
+    },
+    {
+      image: Keyboard,
+      description:
+        " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+
+      title: "Just Grab It",
+      discountedPrice: 265,
+      actualPrice: 340,
+      ratings: "4",
+      addOns: ["Wireless Mouse", "Wireless Keyboard", "64 GB SSD"],
+    },
   ];
 
   const containerRef = useRef(null); // Ref for the container
@@ -78,12 +112,12 @@ const RecentlyViewed = () => {
   };
 
   return (
-    <div className="w-[90%] lg:w-[80%] mx-auto pt-14">
+    <div className="w-full mx-auto pt-20">
       <div className="flex justify-between items-center">
         <div>
-          <h3 className="font-bold text-2xl">Recently Viewed</h3>
+          <h3 className="font-bold text-2xl">Related Products</h3>
           <h6 className="py-1 flex text-xs font-semibold">
-            <span className="text-gray">Showing 4 of 18 results</span>
+            <span className="text-gray">Showing 7 of 32 results</span>
             <span className="text-primary px-2 cursor-pointer hover:underline">
               View more
             </span>
@@ -113,62 +147,64 @@ const RecentlyViewed = () => {
         {dummyData.map((item, index) => (
           <div
             key={index}
-            className="min-w-[80%] sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[24%] border-[1px] shadow-lg shadow-gray border-lightGray rounded-md flex flex-col cursor-pointer "
+            className="2xl::min-w-[20%] xl:min-w-[24%] sm:min-w-[35%]  min-w-[80%] shadow-lg shadow-gray bg-white rounded-md flex flex-col cursor-pointer "
           >
-            <img
-              className="h-[180px] w-[100%] rounded-t-md"
-              src={item.image}
-              alt={item.title}
-            />
+            <div className="relative">
+              <img
+                className="h-[180px] w-full rounded-t-md"
+                src={item.image}
+                alt={item.title}
+              />
+              <div className="pt-3 px-3 border-t border-lightGray flex justify-end items-center gap-x-3 absolute top-0 right-0">
+                <button className="min-w-[40px] h-[40px] bg-primary rounded-full flex justify-center items-center text-white">
+                  <MdOutlineFavorite className="text-xl" />
+                </button>
+                <button className="min-w-[40px] h-[40px] bg-primary rounded-full flex justify-center items-center text-white">
+                  <HiShoppingCart className="text-xl" />
+                </button>
+              </div>
+            </div>
+
             <div className="p-3 flex-grow">
               <h2 className="text-lg font-bold truncate">{item.title}</h2>
               <h6 className="text-sm text-gray py-1">
                 {item.description.slice(0, 80)}{" "}
                 {item.description.length > 80 && "..."}
               </h6>
-              <div className="flex justify-between items-center pt-1">
+              <div className="flex justify-between items-center">
                 <div className="flex gap-x-2 items-center">
-                  <span className="text-primary text-xl font-semibold">
+                  <span className="text-primary text-lg font-semibold">
                     ${item.discountedPrice}
                   </span>
-                  <span className="text-gray text-md font-semibold line-through">
+                  <span className="text-gray text-sm font-semibold line-through">
                     ${item.actualPrice}
                   </span>
                 </div>
-                <div className="flex">
+                <div className="flex items-center text-sm text-gray">
                   {[1, 2, 3, 4, 5].map((i) => (
                     <FaStar
                       key={i}
-                      className={`${
+                      className={`text-sm ${
                         i <= item.ratings ? "text-primary" : "text-gray"
                       }`}
                     />
                   ))}
+                  (10)
                 </div>
               </div>
-              {/* <div className="px-4 pt-2">
-                {item.addOns.slice(0, 3).map((addOn, index) => (
-                  <p
-                    key={index}
-                    className="py-1 text-xs flex items-center gap-x-3"
-                  >
-                    <GiCheckMark className="text-primary" />
-                    <span className="text-gray">{addOn}</span>
-                  </p>
-                ))}
-              </div> */}
-            </div>
-            <div className="p-3 border-t-[1px] border-lightGray flex justify-between items-center">
-              <button className="h-[40px] w-[55%] px-3 border-2 bg-primary text-md text-white rounded-md font-semibold flex justify-center items-center gap-x-1">
-                <HiShoppingCart className="text-white" />
-                <span className="text-xs">BUY NOW</span>
-              </button>
-              <button className="w-[18%] h-[38px] border-2 border-primary rounded-md flex justify-center items-center hover:bg-lightGray text-primary">
-                <MdOutlineFavorite className="text-xl" />
-              </button>
-              <button className="w-[18%] h-[38px] border-2 border-primary rounded-md flex justify-center items-center  hover:bg-lightGray text-primary">
-                <HiShoppingCart className="text-xl" />
-              </button>
+              <h6 className="pt-3 flex text-sm font-semibold justify-center">
+                <span className="text-primary">140</span>
+                <span className="text-gray px-1">units sold out</span>
+              </h6>
+
+              <div className="w-full py-2">
+                <div className="flex justify-center py-1 text-sm text-primary">
+                  45 left
+                </div>
+                <div className="w-full rounded-full h-2.5 bg-lightGray">
+                  <div className="bg-primary h-2.5 rounded-full w-[45%]"></div>
+                </div>
+              </div>
             </div>
           </div>
         ))}
@@ -177,4 +213,4 @@ const RecentlyViewed = () => {
   );
 };
 
-export default RecentlyViewed;
+export default RelatedProducts;

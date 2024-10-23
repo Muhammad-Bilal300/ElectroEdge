@@ -4,6 +4,7 @@ import Body from "./Body/Body";
 import { useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar/Sidebar";
 import AdminBody from "./AdminBody/AdminBody";
+import Footer from "./Footer/Footer";
 
 const Layout = () => {
   const location = useLocation(); // Access current route information
@@ -25,6 +26,7 @@ const Layout = () => {
       {url === "admin" ? <Sidebar /> : <Header />}
 
       {url === "admin" ? <AdminBody /> : <Body />}
+      <Footer />
     </div>
   );
 };

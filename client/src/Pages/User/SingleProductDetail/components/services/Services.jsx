@@ -7,7 +7,7 @@ import { MdOutlinePayment } from "react-icons/md";
 
 const Services = () => {
   return (
-    <div className="w-[90%] lg:w-[80%] flex justify-between flex-wrap gap-y-4 mx-auto pt-14">
+    <div className="w-full flex justify-between flex-wrap gap-y-4 mx-auto pt-24">
       <ServiceCard icon={FaTruck} title="Free Delivery" subTitle="From $40" />
       <ServiceCard icon={FaStar} title="Best Quality" subTitle="Brand" />
       <ServiceCard

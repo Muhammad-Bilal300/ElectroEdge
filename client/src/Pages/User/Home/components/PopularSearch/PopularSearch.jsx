@@ -147,7 +147,7 @@ const PopularSearch = () => {
         {dummyData.map((item, index) => (
           <div
             key={index}
-            className="min-w-[80%] sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[24%] border-[1px] shadow-lg shadow-gray border-lightGray rounded-md flex flex-col cursor-pointer"
+            className="min-w-[80%] sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[24%] border-[1px] shadow-lg shadow-gray border-lightGray rounded-md flex flex-col cursor-pointer "
           >
             <img
               className="h-[180px] w-[100%] rounded-t-md"
@@ -195,7 +195,7 @@ const PopularSearch = () => {
             <div className="p-3 border-t-[1px] border-lightGray flex justify-between items-center">
               <button className="h-[40px] w-[55%] px-3 border-2 bg-primary text-md text-white rounded-md font-semibold flex justify-center items-center gap-x-1">
                 <HiShoppingCart className="text-white" />
-                <span className="text-sm">Buy Now</span>
+                <span className="text-xs">BUY NOW</span>
               </button>
               <button className="w-[18%] h-[38px] border-2 border-primary rounded-md flex justify-center items-center hover:bg-lightGray text-primary">
                 <MdOutlineFavorite className="text-xl" />
