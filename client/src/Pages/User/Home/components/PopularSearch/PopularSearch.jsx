@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Laptop from "../../../../../Assets/Laptop.jpg";
 import Headphone from "../../../../../Assets/Headphone.jpg";
 import Printer from "../../../../../Assets/Printer.jpg";
@@ -13,8 +13,10 @@ import { HiShoppingCart } from "react-icons/hi";
 import { MdOutlineFavorite } from "react-icons/md";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const PopularSearch = () => {
+  const navigate = useNavigate();
   const dummyData = [
     {
       image: Laptop,
@@ -111,6 +113,16 @@ const PopularSearch = () => {
     });
   };
 
+  const [active, setActive] = useState(false);
+
+  const handleClick = () => {
+    setActive(!active);
+    // Optionally, reset the active state after some time
+    setTimeout(() => {
+      setActive(false);
+    }, 300); // Duration of the animation
+  };
+
   return (
     <div className="w-[90%] lg:w-[80%] mx-auto pt-14">
       <div className="flex justify-between items-center">
@@ -146,8 +158,12 @@ const PopularSearch = () => {
       >
         {dummyData.map((item, index) => (
           <div
+            onClick={() => {
+              handleClick();
+              navigate(`/products/${item.title}/detail`);
+            }}
             key={index}
-            className="min-w-[80%] sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[24%] border-[1px] shadow-lg shadow-gray border-lightGray rounded-md flex flex-col cursor-pointer "
+            className={`min-w-[80%] sm:min-w-[45%] lg:min-w-[30%] xl:min-w-[24%] border-[1px] shadow-lg shadow-gray border-lightGray rounded-md flex flex-col cursor-pointer hover:bg-lightGray`}
           >
             <img
               className="h-[180px] w-[100%] rounded-t-md"

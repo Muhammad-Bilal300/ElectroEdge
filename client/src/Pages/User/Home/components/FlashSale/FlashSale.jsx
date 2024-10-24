@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Laptop from "../../../../../Assets/Laptop.jpg";
 import Headphone from "../../../../../Assets/Headphone.jpg";
 import Printer from "../../../../../Assets/Printer.jpg";
@@ -9,8 +9,11 @@ import { FaStar } from "react-icons/fa6";
 
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const FlashSale = () => {
+  const navigate = useNavigate();
+
   const dummyData = [
     {
       image: Laptop,
@@ -134,6 +137,16 @@ const FlashSale = () => {
     }
   };
 
+  const [active, setActive] = useState(false);
+
+  const handleClick = () => {
+    setActive(!active);
+    // Optionally, reset the active state after some time
+    setTimeout(() => {
+      setActive(false);
+    }, 300); // Duration of the animation
+  };
+
   return (
     <div className="w-[90%] lg:w-[80%] mx-auto pt-14">
       <div className="bg-primary lg:p-9 p-4 rounded-lg">
@@ -177,8 +190,12 @@ const FlashSale = () => {
               {dummyData.map((item, index) => {
                 return (
                   <div
+                    onClick={() => {
+                      handleClick();
+                      navigate(`/products/${item.title}/detail`);
+                    }}
                     key={index}
-                    className="sm:min-w-[48%] min-w-[90%] bg-white rounded-md flex justify-start flex-row cursor-pointer p-2 relative hover:bg-lightGray"
+                    className={`sm:min-w-[48%] min-w-[90%] bg-white rounded-md flex justify-start flex-row cursor-pointer p-2 relative hover:bg-lightGray`}
                   >
                     <img
                       className="h-[90px] w-[30%] rounded-md"
