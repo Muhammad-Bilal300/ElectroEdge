@@ -31,7 +31,7 @@ const Navbar = () => {
         <Logo />
 
         {/* Hide search bar on xs screens */}
-        <div className="hidden md:block w-[50%] flex justify-center">
+        <div className="hidden md:block w-[45%] flex justify-center">
           <SearchBar />
         </div>
 
