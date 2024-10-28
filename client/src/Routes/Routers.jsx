@@ -15,6 +15,7 @@ import Vendors from "../Pages/Admin/Vendors/Vendors";
 import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
 import SingleProductDetail from "../Pages/User/SingleProductDetail/SingleProductDetail";
 import Cart from "../Pages/User/Cart/Cart";
+import Checkout from "../Pages/User/Checkout/Checkout";
 
 const Routers = () => {
   return (
@@ -29,7 +30,9 @@ const Routers = () => {
           path={`/category/:name/products`}
           element={<CategoryProducts />}
         />
+
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Route>
 
       <Route path="/admin" element={<Layout />}>
