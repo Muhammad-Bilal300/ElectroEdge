@@ -6,7 +6,7 @@ const ShippingDetails = () => {
     <div className="w-full flex flex-col gap-y-6 lg:w-[65%]">
       <h3 className="text-[22px] font-bold">Shipping Details</h3>
       {/* input fields */}
-      <div className="grid grid-cols-2 gap-x-8 gap-y-8 mt-4 ">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-8 gap-y-8 mt-4 ">
         <InputField
           type="text"
           fieldName="First Name"

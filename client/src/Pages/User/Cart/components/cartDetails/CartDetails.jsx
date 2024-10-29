@@ -80,10 +80,10 @@ const CartDetails = () => {
                 </div>
                 <div className="flex flex-col w-full">
                   <div className="flex justify-between items-center ">
-                    <h2 className="text-[20px] font-bold truncate">
+                    <h2 className="text-[18px] font-bold truncate">
                       {item.title}
                     </h2>
-                    <h2 className="text-[16px] text-gray">{item.sku}</h2>
+                    <h2 className="text-[14px] text-gray">{item.sku}</h2>
                   </div>
                   <h4 className="text-primary text-[18px] font-bold">
                     ${item.price}

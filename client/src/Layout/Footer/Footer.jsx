@@ -15,8 +15,8 @@ const Footer = () => {
   const navigate = useNavigate();
   return (
     <Container className="w-full bg-lightGray mt-16">
-      <div className="w-[100%] lg:w-[80%] gap-y-5 px-4 lg:px-0 mx-auto flex flex-col lg:flex-row justify-between items-start gap-x-10 py-14">
-        <div className="w-[100%] lg:w-[30%]">
+      <div className="w-[100%] lg:w-[80%] gap-y-5 px-4 lg:px-0 mx-auto flex flex-col lg:flex-row justify-between items-start gap-x-8 py-14">
+        <div className="w-[100%] lg:w-[35%]">
           <div className="w-[100%] lg:w-[60%]">
             <img
               src={ElectroEdgeTransparentIcon}
@@ -32,19 +32,19 @@ const Footer = () => {
             necessitatibus est illo.
           </p>
           <div className="flex justify-between py-3 items-center">
-            <FaHeadphones className="text-gray text-[30px]" />
+            <FaHeadphones className="text-gray text-[24px]" />
             <div className="flex flex-col justify-start">
-              <p className="tyext-[14px] font-semibold text-gray">
+              <p className="tyext-[10px] font-semibold text-gray">
                 Have any question?
               </p>
-              <p className="text-[16px] font-bold text-primary">+123 456 789</p>
+              <p className="text-[12px] font-bold text-primary">+123 456 789</p>
             </div>
-            <button className="px-6 h-[40px] border-2 border-primary text-primary flex items-center justify-center rounded-md font-semibold hover:bg-primary hover:text-white">
+            <button className="px-4 h-[36px] border-2 border-primary text-primary flex items-center justify-center rounded-md font-semibold hover:bg-primary hover:text-white">
               Live Chat
             </button>
           </div>
         </div>
-        <div className="w-[100%] lg:w-[20%] flex flex-col lg:items-center items-start">
+        <div className="w-[100%] lg:w-[15%] flex flex-col lg:items-center items-start">
           <h3 className="text-black text-[16px] font-bold uppercase">
             Quicklinks
           </h3>
@@ -56,7 +56,7 @@ const Footer = () => {
             <p>Sign Up</p>
           </div>
         </div>
-        <div className="w-[100%] lg:w-[20%] flex flex-col lg:items-center items-start">
+        <div className="w-[100%] lg:w-[15%] flex flex-col lg:items-center items-start">
           <h3 className="text-black text-[16px] font-bold uppercase">
             Customer Area
           </h3>
@@ -69,7 +69,7 @@ const Footer = () => {
             <p>My Cart</p>
           </div>
         </div>
-        <div className="w-[100%] lg:w-[30%] lg:items-center items-startfs">
+        <div className="w-[100%] lg:w-[35%] lg:items-center items-startfs">
           <h3 className="text-black text-[16px] font-bold uppercase">
             Follow Us
           </h3>

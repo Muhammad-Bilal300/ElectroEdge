@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import CartDetails from "./components/cartDetails/CartDetails";
 import CartSummary from "./components/cartSummary/CartSummary";
+import Services from "../components/services/Services";
+import RelatedProducts from "../components/relatedProducts/RelatedProducts";
 
 const Cart = () => {
   return (
@@ -9,6 +11,8 @@ const Cart = () => {
         <CartDetails />
         <CartSummary />
       </div>
+      <Services />
+      <RelatedProducts />
     </div>
   );
 };

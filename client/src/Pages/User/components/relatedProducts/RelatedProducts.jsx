@@ -1,11 +1,9 @@
 import React, { useRef } from "react";
-import Laptop from "../../../../../Assets/Laptop.jpg";
-import Headphone from "../../../../../Assets/Headphone.jpg";
-import Printer from "../../../../../Assets/Printer.jpg";
-import Speaker from "../../../../../Assets/Speakers.jpg";
-import Keyboard from "../../../../../Assets/Keyboard.jpg";
-
-import { GiCheckMark } from "react-icons/gi";
+import Laptop from "../../../../Assets/Laptop.jpg";
+import Headphone from "../../../../Assets/Headphone.jpg";
+import Printer from "../../../../Assets/Printer.jpg";
+import Speaker from "../../../../Assets/Speakers.jpg";
+import Keyboard from "../../../../Assets/Keyboard.jpg";
 
 import { FaStar } from "react-icons/fa6";
 

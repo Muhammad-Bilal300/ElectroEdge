@@ -2,8 +2,8 @@ import React from "react";
 import ProductImages from "./components/productImages/ProductImages";
 import ProductDetails from "./components/productDetail/ProductDetail";
 import RatingsAndReviews from "./components/ratingsAndReviews/RatingsAndReviews";
-import Services from "./components/services/Services";
-import RelatedProducts from "./components/relatedProducts/RelatedProducts";
+import Services from "../components/services/Services";
+import RelatedProducts from "../components/relatedProducts/RelatedProducts";
 
 const SingleProductDetail = () => {
   return (
