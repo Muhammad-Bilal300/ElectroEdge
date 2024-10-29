@@ -16,6 +16,7 @@ import Dashboard from "../Pages/Admin/Dashboard/Dashboard";
 import SingleProductDetail from "../Pages/User/SingleProductDetail/SingleProductDetail";
 import Cart from "../Pages/User/Cart/Cart";
 import Checkout from "../Pages/User/Checkout/Checkout";
+import OrderDetailAndStatus from "../Pages/User/OrderDetailAndStatus/OrderDetailAndStatus";
 
 const Routers = () => {
   return (
@@ -33,6 +34,7 @@ const Routers = () => {
 
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order-detail" element={<OrderDetailAndStatus />} />
       </Route>
 
       <Route path="/admin" element={<Layout />}>

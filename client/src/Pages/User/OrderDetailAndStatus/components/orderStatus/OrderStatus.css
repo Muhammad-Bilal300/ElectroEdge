@@ -1,0 +1,12 @@
+/* OrderStatus.css */
+.custom-step {
+  color: orange !important; /* Change the step title color */
+}
+
+.custom-step .ant-steps-item-description {
+  margin-top: 10px; /* Add more gap between steps */
+}
+
+.ant-steps-item {
+  margin-bottom: 20px; /* Add gap between each step */
+}

@@ -1,8 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
-const PlaceOrder = () => {
-  const navigate = useNavigate();
+const OrderDetail = () => {
   const cartItems = [
     {
       items: 2,
@@ -21,8 +19,11 @@ const PlaceOrder = () => {
     },
   ];
   return (
-    <div className="w-full flex flex-col lg:w-[35%] px-4 py-5 rounded-md border-[1px] border-gray">
-      <h5 className="font-bold text-[14px]">MY ORDER</h5>
+    <div className="w-full flex flex-col lg:w-[45%] px-4 py-5 rounded-md ">
+      <h5 className="font-bold text-[16px] mb-8 pb-2 border-b-2 border-lightGray">
+        Order ID : 12345
+      </h5>
+      <h5 className="font-bold text-[16px]">Order Items</h5>
       <div className="py-6 border-b-2 border-lightGray flex flex-col gap-y-4">
         {cartItems.map((item, index) => {
           return (
@@ -57,38 +58,16 @@ const PlaceOrder = () => {
           <h5 className="text-[20px] font-semibold text-primary">$1976.98</h5>
         </div>
       </div>
-      <div className="flex flex-col gap-y-2 py-4 border-b-2 border-lightGray">
-        <div className="flex flex-col gap-y-4">
-          <h5 className="text-[18px] font-semibold">Payment</h5>
-          <div className="flex items-center gap-x-4">
-            <input
-              className="rounded-sm cursor-pointer w-[16px] h-[15px]"
-              type="checkbox"
-            />
-            <h4 className="text-[16px] font-semibold m-0 p-0">
-              Cash On Delivery
-            </h4>
-          </div>
-          <div className="flex items-center gap-x-4">
-            <input
-              className="rounded-sm cursor-pointer w-[16px] h-[15px]"
-              type="checkbox"
-            />
-            <h4 className="text-[16px] font-semibold m-0 p-0">Online</h4>
-          </div>
-        </div>
-      </div>
-
       <button
         onClick={() => {
-          navigate("/order-detail");
+          //   navigate("/order-detail");
         }}
-        className="w-full bg-primary text-white rounded-md font-semibold text-sm h-[40px] flex justify-center items-center mt-6"
+        className="w-full border-2 border-primary text-primary rounded-md font-semibold text-sm h-[40px] flex justify-center items-center mt-6"
       >
-        PLACE ORDER
+        DOWNLOAD PDF
       </button>
     </div>
   );
 };
 
-export default PlaceOrder;
+export default OrderDetail;
