@@ -1,12 +1,53 @@
 /* OrderStatus.css */
 .custom-step {
-  color: orange !important; /* Change the step title color */
-}
-
-.custom-step .ant-steps-item-description {
-  margin-top: 10px; /* Add more gap between steps */
+  color: #ff6b17 !important; /* Change the step title color */
+  font-weight: bold;
 }
 
 .ant-steps-item {
-  margin-bottom: 20px; /* Add gap between each step */
+  margin-bottom: 10px;
+}
+
+.ant-steps-item-finish .ant-steps-item-title {
+  color: white !important; /* Change the text color of completed steps to white */
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+  background-color: #ff6b17 !important; /* Background color for completed steps */
+  border-color: #ff6b17 !important; /* Border color for completed steps */
+}
+
+/* Ensure the text inside the finished circle is also white */
+.ant-steps-item-finish .ant-steps-item-icon .ant-steps-icon {
+  color: white !important; /* Text color inside the circle */
+}
+
+.ant-steps-item-process .ant-steps-item-title {
+  color: #ff6b17 !important; /* Text color for the current step */
+}
+
+.ant-steps-item-process .ant-steps-item-icon {
+  background-color: rgb(
+    255,
+    180,
+    100
+  ) !important; /* Light orange for the current step */
+  border-color: rgb(
+    255,
+    180,
+    100
+  ) !important; /* Border color for the current step */
+}
+
+/* OrderStatus.css */
+.ant-steps-item {
+  width: 100%; /* Ensure each step item takes the full width */
+}
+
+.ant-steps-item-title {
+  width: 100%; /* Make sure the title also takes the full width */
+}
+
+.ant-steps-item-title > div {
+  width: 100%; /* Ensure the inner div is also full width */
 }

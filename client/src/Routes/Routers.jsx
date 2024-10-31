@@ -17,10 +17,21 @@ import SingleProductDetail from "../Pages/User/SingleProductDetail/SingleProduct
 import Cart from "../Pages/User/Cart/Cart";
 import Checkout from "../Pages/User/Checkout/Checkout";
 import OrderDetailAndStatus from "../Pages/User/OrderDetailAndStatus/OrderDetailAndStatus";
+import Login from "../Pages/common/login/Login";
+import SignUp from "../Pages/common/signup/SignUp";
+import ForgotPassword from "../Pages/common/fogotPassword/ForgotPassword";
+import ResetPassword from "../Pages/common/resetPassword/ResetPassword";
+import VerifyOTP from "../Pages/common/verifyOTP/VerifyOTP";
 
 const Routers = () => {
   return (
     <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/sign-up" element={<SignUp />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
+      <Route path="/verify-otp" element={<VerifyOTP />} />
+
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route
