@@ -62,11 +62,23 @@ const Footer = () => {
           </h3>
           <div className="flex flex-col py-4 text-[14px] text-gray font-semibold cursor-pointer justify-start gap-y-3">
             <p>My Account</p>
-            <p>Orders</p>
+            <p
+              onClick={() => {
+                navigate(`/my-orders`);
+              }}
+            >
+              Orders
+            </p>
             <p>Tracking List</p>
             <p>Terms</p>
             <p>Privacy Policy</p>
-            <p>My Cart</p>
+            <p
+              onClick={() => {
+                navigate(`/cart`);
+              }}
+            >
+              My Cart
+            </p>
           </div>
         </div>
         <div className="w-[100%] lg:w-[35%] lg:items-center items-startfs">

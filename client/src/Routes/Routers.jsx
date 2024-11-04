@@ -22,6 +22,7 @@ import SignUp from "../Pages/common/signup/SignUp";
 import ForgotPassword from "../Pages/common/fogotPassword/ForgotPassword";
 import ResetPassword from "../Pages/common/resetPassword/ResetPassword";
 import VerifyOTP from "../Pages/common/verifyOTP/VerifyOTP";
+import MyOrders from "../Pages/User/MyOrders/MyOrders";
 
 const Routers = () => {
   return (
@@ -42,7 +43,7 @@ const Routers = () => {
           path={`/category/:name/products`}
           element={<CategoryProducts />}
         />
-
+        <Route path="/my-orders" element={<MyOrders />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-detail" element={<OrderDetailAndStatus />} />

@@ -25,8 +25,13 @@ const Layout = () => {
     <div className={`${url === "admin" ? "flex" : ""} `}>
       {url === "admin" ? <Sidebar /> : <Header />}
 
-      {url === "admin" ? <AdminBody /> : <Body />}
-      <Footer />
+      {url === "admin" ? (
+        <AdminBody />
+      ) : (
+        <div>
+          <Body /> <Footer />
+        </div>
+      )}
     </div>
   );
 };
