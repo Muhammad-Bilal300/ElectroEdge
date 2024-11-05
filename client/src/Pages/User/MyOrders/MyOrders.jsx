@@ -33,7 +33,7 @@ const MyOrders = () => {
       payment: "Cash on Delivery",
     },
     {
-      orderId: "02",
+      orderId: "03",
       customer: "Bilal",
       items: 8,
       orderTotal: 850,
@@ -42,7 +42,7 @@ const MyOrders = () => {
       payment: "Online",
     },
     {
-      orderId: "03",
+      orderId: "04",
       customer: "Bilal",
       items: 8,
       orderTotal: 850,

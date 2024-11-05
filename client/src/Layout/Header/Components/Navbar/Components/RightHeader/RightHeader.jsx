@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { HiOutlineUserCircle } from "react-icons/hi";
 import { IoCart, IoNotifications } from "react-icons/io5";
+import { MdArrowDropDown, MdFavorite } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
 const RightHeader = () => {
@@ -8,9 +10,22 @@ const RightHeader = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-end items-center w-full md:w-auto">
+    <div className="flex justify-end items-end w-full md:w-auto">
       <button
-        className="relative mr-6"
+        className="relative mr-7"
+        // onClick={() => {
+        //   navigate("/cart");
+        // }}
+      >
+        <MdFavorite className="text-[28px] text-primary" />
+        {/* {cartCount > 0 && (
+          <span className="absolute top-[-10px] right-[-10px] bg-white border-2 border-primary text-primary text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+            {cartCount}
+          </span>
+        )} */}
+      </button>
+      <button
+        className="relative mr-8"
         onClick={() => {
           navigate("/cart");
         }}
@@ -22,7 +37,13 @@ const RightHeader = () => {
           </span>
         )}
       </button>
-      <button
+      <div className="flex items-end cursor-pointer">
+        <div className="bg-lightGray rounded-full cursor-pointer ">
+          <HiOutlineUserCircle className="text-[36px] font-bold text-gray" />
+        </div>
+        <MdArrowDropDown className="text-xl" />
+      </div>
+      {/* <button
         onClick={() => {
           navigate("/sign-up");
         }}
@@ -43,7 +64,7 @@ const RightHeader = () => {
         <span className="relative z-10 group-hover:text-white transition-all duration-500 ease-in-out">
           Login
         </span>
-      </button>
+      </button> */}
     </div>
   );
 };

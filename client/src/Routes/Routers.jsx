@@ -43,10 +43,10 @@ const Routers = () => {
           path={`/category/:name/products`}
           element={<CategoryProducts />}
         />
-        <Route path="/my-orders" element={<MyOrders />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-detail" element={<OrderDetailAndStatus />} />
+        <Route path="/my-orders" element={<MyOrders />} />
       </Route>
 
       <Route path="/admin" element={<Layout />}>
